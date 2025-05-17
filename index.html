@@ -3,134 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grok XAI - Making AI Transparent, Understandable, and Trustworthy</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/animations.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <title>Rakshak - Device 3 Dashboard</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
 </head>
-<body>
-    <header class="header">
-        <nav class="nav-container">
+<body class="dark-mode">
+    <div class="dashboard-container">
+        <!-- Header Section -->
+        <header>
             <div class="logo">
-                <span>Grok</span> XAI
+                <h1>🛡️ RAKSHAK</h1>
+                <span class="subtitle">Device 3 - Remote Monitoring</span>
             </div>
-            <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#demo">Demo</a></li>
-                <li><a href="#success-stories">Success Stories</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="cta-button">Request Demo</button>
-        </nav>
-    </header>
+            <div class="controls">
+                <button id="darkModeToggle" class="control-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="viewToggle" class="control-btn">
+                    <i class="fas fa-map"></i>
+                </button>
+            </div>
+        </header>
 
-    <main>
-        <section id="hero" class="hero-section">
-            <div class="hero-content">
-                <h1 class="fade-in">Making AI Transparent, Understandable, and Trustworthy</h1>
-                <p class="fade-in-delay">Unlock the black box of AI with powerful explainability tools that help you understand, validate, and trust your AI models.</p>
-                <div class="hero-buttons fade-in-delay">
-                    <button class="primary-button">Get Started</button>
-                    <button class="secondary-button">Watch Demo</button>
+        <!-- Main Content -->
+        <main>
+            <!-- 3D Globe Container -->
+            <div id="globeContainer" class="globe-container">
+                <canvas id="globeCanvas"></canvas>
+                <div class="location-info hidden">
+                    <h3>Location Details</h3>
+                    <p class="coordinates"></p>
+                    <p class="status"></p>
                 </div>
             </div>
-            <div class="hero-image fade-in">
-                <!-- Placeholder for hero image -->
-                <div class="ai-visualization"></div>
-            </div>
-        </section>
 
-        <section id="features" class="features-section">
-            <h2>Core Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🔍</div>
-                    <h3>Visual Model Interpretability</h3>
-                    <p>Understand your AI models through intuitive visualizations and detailed explanations of decision-making processes.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚖️</div>
-                    <h3>Bias Detection</h3>
-                    <p>Identify and mitigate potential biases in your AI models with our comprehensive bias detection tools.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔍</div>
-                    <h3>Decision Traceability</h3>
-                    <p>Track and analyze every decision made by your AI models with complete transparency and accountability.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="demo" class="demo-section">
-            <h2>See Grok XAI in Action</h2>
-            <div class="demo-container">
-                <div class="demo-visualization">
-                    <!-- Interactive demo will be implemented with JavaScript -->
-                    <div id="demo-canvas" class="demo-canvas"></div>
-                </div>
-                <div class="demo-controls">
-                    <button class="demo-button">Try Different Models</button>
-                    <button class="demo-button">Adjust Parameters</button>
-                </div>
-            </div>
-        </section>
-
-        <section id="success-stories" class="success-section">
-            <h2>Success Stories</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p>"Grok XAI has transformed how we validate and deploy AI models. The transparency it provides has been invaluable."</p>
-                    <div class="testimonial-author">
-                        <strong>Sarah Chen</strong>
-                        <span>AI Lead, TechCorp</span>
+            <!-- Side Panel -->
+            <div class="side-panel">
+                <!-- Alert Feed -->
+                <section class="alert-feed">
+                    <h2><i class="fas fa-bell"></i> Live Alerts</h2>
+                    <div class="alerts-container">
+                        <!-- Alerts will be dynamically inserted here -->
                     </div>
-                </div>
-                <div class="testimonial-card">
-                    <p>"The visual interpretability tools helped us identify and fix critical biases in our models within days."</p>
-                    <div class="testimonial-author">
-                        <strong>Michael Rodriguez</strong>
-                        <span>Data Scientist, FinTech Solutions</span>
+                </section>
+
+                <!-- AI Communication Panel -->
+                <section class="ai-communication">
+                    <h2><i class="fas fa-robot"></i> Rakshak AI Updates</h2>
+                    <div class="messages-container">
+                        <!-- AI messages will be dynamically inserted here -->
                     </div>
-                </div>
+                </section>
             </div>
-        </section>
+        </main>
+    </div>
 
-        <section id="contact" class="contact-section">
-            <h2>Ready to Make Your AI Explainable?</h2>
-            <div class="contact-container">
-                <button class="cta-button">Schedule a Demo</button>
-                <button class="secondary-button">View Documentation</button>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Grok XAI</h4>
-                <p>Making AI transparent and trustworthy</p>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#demo">Demo</a></li>
-                    <li><a href="#success-stories">Success Stories</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Contact</h4>
-                <ul>
-                    <li>Email: info@grokxai.com</li>
-                    <li>Phone: (555) 123-4567</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Grok XAI. All rights reserved.</p>
-        </div>
-    </footer>
-
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="js/globe.js"></script>
+    <script src="js/websocket.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/ui-controls.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
